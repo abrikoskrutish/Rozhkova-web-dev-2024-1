@@ -1,4 +1,72 @@
 header {
     background-color: palevioletred;
     color: white;
+    padding: 20px 0;
+    /* 1 знач отступ сверху и снизу, 2 - слева справа*/
+    font-size: 1.5rem;
+    /* em - такое же как у родителя*/
+    /* rem - от корневого элемента html*/
+    font-weight: bold;
+    /* жирный текст */
+
+}
+
+body{
+    margin: 0;
+}
+
+.main-menu ul {
+    /* комбинатор потомков - юл будет принимать эти значение
+    только для мейнменю */
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    
+}
+/* */
+
+.main-menu li {
+    display: inline;
+    /* чтобы элементы шли в строчку */
+    margin-right: 10px; 
+    /* отступы между словами*/
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    /* всякие подчеркивания */
+}
+
+footer {
+    background-color: palevioletred;
+    color: white;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 75% ;
+    /* ширина 75 % от main от родителя*/
+    margin: 0 auto;
+    /* чтоб посередине было */
+}
+
+p {
+    text-align: justify;
+    /* для выравнивания */
+}
+
+
+.avatar {
+    height: 300 px;
+    text-align: center;
+    background-image: url(images/fon.jpg);
+    /* background-repeat: no-repeat;
+    чтоб не дублировалось при заполнении всего пространства
+    background-position: center; */
+}
+
+.avatar > img {
+    /* еще один комбинатор потомков */
+    height: 100%;
 }
