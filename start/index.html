@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <title>Веб-разработчик</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Warang+Citi&display=swap" rel="stylesheet">
+        
     </head>
     <body>
         <header>
@@ -16,6 +20,10 @@
                         <!-- любой текст -->
                     </ul>
                 </nav>
+                <div class="author-info">
+                    <h1>Иванов Максим Сергеевич</h1>
+                    <a style="color: red;" class="btn btn-white" href="mailto:example@mail.ru">Написать мне</a>
+                </div>
             </div>
         </header>
         <main>
@@ -26,10 +34,10 @@
                     
                     <figure class = "avatar">
                         <!-- например для размещения картинки-->
-                        <img src="images/person.jpg" alt="cat" width="300">
+                        <img src="images/person.jpg" alt="cat">
                     </figure>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        <span style="color: pink;">Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. 
                         Voluptates illum cumque obcaecati placeat sint odio delectus! 
                         Voluptatibus vitae at amet cumque sequi labore necessitatibus doloribus assumenda. 
                         Tenetur itaque dolorum necessitatibus.
@@ -38,6 +46,10 @@
                         Voluptatibus vitae at amet cumque sequi labore necessitatibus doloribus assumenda. 
                         Tenetur itaque dolorum necessitatibus.
                     </p>
+
+                    <a class="btn" href="about.html">Подробнее</a>
+
+
 
                     <pre>
                         <!-- чтоб форматирование текста на сайте было такое же как здесь-->
@@ -52,7 +64,7 @@
                 <section id="skills">
                     <h2>Навыки</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        <b>Lorem</b> ipsum dolor sit amet consectetur adipisicing elit. 
                         Voluptates illum cumque obcaecati placeat sint odio delectus! 
                         Voluptatibus vitae at amet cumque sequi labore necessitatibus doloribus assumenda. 
                         Tenetur itaque dolorum necessitatibus.
@@ -66,7 +78,7 @@
                 <section id="techno">
                     <h2>Технологии</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        <strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. 
                         Voluptates illum cumque obcaecati placeat sint odio delectus! 
                         Voluptatibus vitae at amet cumque sequi labore necessitatibus doloribus assumenda. 
                         Tenetur itaque dolorum necessitatibus.
@@ -75,12 +87,40 @@
                         Voluptatibus vitae at amet cumque sequi labore necessitatibus doloribus assumenda. 
                         Tenetur itaque dolorum necessitatibus.
                     </p>
+
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Название</th>
+                                <th>Степень владения</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>8</td>
+                            </tr>
+                        </tbody>
+
+
+                    </table>
+
                 </section>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
     
 
             </div>    
@@ -90,7 +130,7 @@
         <footer>
             <div class="container">
                 <!-- подвал сайта -->
-                 &copy; Иванов Иван Иванович
+                 &copy; Иванов Максим Сергеевич
             </div>
         </footer>
     </body>

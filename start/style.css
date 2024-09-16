@@ -13,6 +13,7 @@ header {
 
 body{
     margin: 0;
+    font-family: "Playwrite CU", cursive;
 }
 
 .main-menu ul {
@@ -58,7 +59,7 @@ p {
 
 
 .avatar {
-    height: 300 px;
+    height: 300px;
     text-align: center;
     background-image: url(images/fon.jpg);
     /* background-repeat: no-repeat;
@@ -70,3 +71,30 @@ p {
     /* еще один комбинатор потомков */
     height: 100%;
 }
+
+.btn {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid purple;
+    border-radius: 5px;
+    transition: color 0.5s, border-color 0.5s;
+}
+
+.btn-whire {
+    color: aliceblue;
+    border-color: aliceblue;
+}
+
+.btn:hover {
+    color: blue;
+    border-color: blue;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid black;
+    
+}
+

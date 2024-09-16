@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: "Playwrite CU", cursive;
+    font-size: 15px;
+}
+
+/* для блоков */
+div {
+    max-width: 75% ;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* для текста */
+p {
+    font-family: "Playwrite CU", cursive;
+    font-size: 15px;
+    font-weight: normal;
+    color:black;
+}
+
+
+/* для изображений */
+img {
+    width: auto;
+    height: 350px;
+}
+
+/* для таблиц */
+table {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+/* для ссылок */
+.btn {
+    margin-right: 10px;
+    text-decoration: none;
+    font-family: "Playwrite CU", cursive;
+    font-size: 20px;
+    color: black;
+}
+
+.two {
+    text-decoration: none;
+    font-family: "Playwrite CU", cursive;
+    font-size: 15px;
+    color: white;
+}
+
+.btn:hover , .two:hover {
+    color: plum;
+    border-color: plum;
+}
+
+
+/* для футера */
+footer {
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
