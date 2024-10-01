@@ -5,7 +5,7 @@ body {
 }
 
 /* для блоков */
-div {
+.contener {
     max-width: 75% ;
     margin: 0 auto;
 }
@@ -14,13 +14,11 @@ div {
     box-sizing: border-box;
 }
 
-
 /* для текста */
 p {
     font-family: "Playwrite CU", cursive;
     font-size: 15px;
     font-weight: normal;
-    color:black;
 }
 
 
@@ -44,7 +42,7 @@ th, td {
 }
 
 /* для ссылок */
-.btn {
+.bt {
     margin-right: 10px;
     text-decoration: none;
     font-family: "Playwrite CU", cursive;
@@ -70,4 +68,13 @@ footer {
     padding: 5px;
     background-color: black;
     color: white;
+}
+
+footer p {
+    margin-left: 30px;
+}
+
+
+.call {
+    color: aliceblue;
 }
