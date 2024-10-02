@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .menu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -10,22 +15,49 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 1px solid tomato;
     padding: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 35px;
+    
 }
 
-img {
+.menu-element:hover {
+    border: 2px solid plum;
+}
+
+
+.images_food {
+    display: flex;
     border-radius: 35px;
-    /* width: 150px;
-    height: 150px; */
+    
+}
+
+.price {
+    font-size: 23px;
+}
+
+.name_element {
+    font-size: 22px;
+    flex: 1;
+    max-width: 250px;
+    font-size: 100%;
+} 
+
+.ves {
+    color: rgb(191, 191, 191);
 }
 
 .btn {
-    border-radius: 5px;
-    background-color: rgb(241, 238, 233);
+    background-color: #f1eee9;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
     border: none;
+}
+
+.menu-element:hover button {
+    background-color: rgb(201, 201, 201);
 }
 
 .drink {

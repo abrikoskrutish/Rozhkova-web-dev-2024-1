@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Собрать ланч</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Warang+Citi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="collect.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="contener">
-            <h1>Food Construct</h1>
             <nav>
-                <a class="bt" href="index.html">О нас</a>
-                <a class="bt" href="collect.html">Собрать ланч</a>
-                <a class="bt" href="#">Заказы</a>
-                <a class="bt" href="#floot">Контакты</a>
+                <h1>Food Construct</h1>
+                <div class="flex-nav">
+                    <a class="bt" href="index.html">О нас</a>
+                    <a class="bt" id="active-button" href="collect.html">Собрать ланч</a>
+                    <a class="bt" href="#">Заказы</a>
+                    <a class="bt" href="#floot">Контакты</a>
+                </div>
             </nav>
         </div>
     </header>
@@ -28,24 +30,24 @@
                 <h2>Выберите суп</h2>
                 <div class="menu">
                     <div class="menu-element">
-                        <img src="images/gazpacho.jpg" alt="gaspacho">
-                        <p>195 p</p>
-                        <p>Гаспачо</p>
-                        <p>350 г</p>
+                        <img class="images_food" src="images/gazpacho.jpg" alt="gaspacho">
+                        <p class="price">195&#8381</p>
+                        <p class="name_element">Гаспачо</p>
+                        <p class="ves">350 г</p>
                         <button class="btn">Добавить</button>
                     </div>
                     <div class="menu-element">
-                        <img src="images/mushroom_soup.jpg" alt="mushroom_soup">
-                        <p>185 p</p>
-                        <p>Грибной суп-пюре</p>
-                        <p>330 г</p>
+                        <img class="images_food" src="images/mushroom_soup.jpg" alt="mushroom_soup">
+                        <p class="price">185&#8381</p>
+                        <p class="name_element">Грибной суп-пюре</p>
+                        <p class="ves">330 г</p>
                         <button class="btn">Добавить</button>
                     </div>
                     <div class="menu-element">
-                        <img src="images/norwegian_soup.jpg" alt="norwegian_soup">
-                        <p>270 p</p>
-                        <p>Норвежский суп</p>
-                        <p>330 г</p>
+                        <img class="images_food" src="images/norwegian_soup.jpg" alt="norwegian_soup">
+                        <p class="price">270&#8381</p>
+                        <p class="name_element">Норвежский суп</p>
+                        <p class="ves">330 г</p>
                         <button class="btn">Добавить</button>
                     </div>
                 </div>
@@ -54,24 +56,24 @@
                 <h2>Выберите главное блюдо</h2>
                 <div class="menu">
                     <div class="menu-element">
-                        <img src="images/friedpotato.jpg" alt="friedpotato">
-                        <p>150 p</p>
-                        <p>Жареная картошка с грибами</p>
-                        <p>250 г</p>
+                        <img class="images_food" src="images/friedpotato.jpg" alt="friedpotato">
+                        <p class="price">150&#8381</p>
+                        <p class="name_element">Жареная картошка с грибами</p>
+                        <p class="ves">250 г</p>
                         <button class="btn">Добавить</button>
                     </div>
                     <div class="menu-element">
-                        <img src="images/lasagna.jpg" alt="lasagna">
-                        <p>385 p</p>
-                        <p>Лазанья</p>
-                        <p>310 г</p>
+                        <img class="images_food" src="images/lasagna.jpg" alt="lasagna">
+                        <p class="price">385&#8381</p>
+                        <p class="name_element">Лазанья</p>
+                        <p class="ves">310 г</p>
                         <button class="btn">Добавить</button>
                     </div>
                     <div class="menu-element">
-                        <img src="images/chickencut.jpg" alt="chickencut">
-                        <p>225 p</p>
-                        <p>Котлеты из курицы с картофельным пюре</p>
-                        <p>280 г</p>
+                        <img class="images_food" src="images/chickencut.jpg" alt="chickencut">
+                        <p class="price">225&#8381</p>
+                        <p class="name_element">Котлеты из курицы с картофельным пюре</p>
+                        <p class="ves">280 г</p>
                         <button class="btn">Добавить</button>
                     </div>
                 </div>
@@ -81,24 +83,24 @@
                 <h2>Выберите напиток</h2>
                 <div class="menu">
                     <div class="menu-element">
-                        <img src="images/orangejuice.jpg" alt="orangejuice">
-                        <p>120 p</p>
-                        <p>Апельсиновый сок</p>
-                        <p>300 мл</p>
+                        <img class="images_food" src="images/orangejuice.jpg" alt="orangejuice">
+                        <p class="price">120&#8381</p>
+                        <p class="name_element">Апельсиновый сок</p>
+                        <p class="ves">300 мл</p>
                         <button class="btn">Добавить</button>
                     </div>
                     <div class="menu-element">
-                        <img src="images/applejuice.jpg" alt="applejuice">
-                        <p>90 p</p>
-                        <p>Яблочный сок</p>
-                        <p>300 мл</p>
+                        <img class="images_food" src="images/applejuice.jpg" alt="applejuice">
+                        <p class="price">90&#8381</p>
+                        <p class="name_element" >Яблочный сок</p>
+                        <p class="ves">300 мл</p>
                         <button class="btn">Добавить</button>
                     </div>
                     <div class="menu-element">
-                        <img src="images/carrotjuice.jpg" alt="carrotjuice">
-                        <p>110 p</p>
-                        <p>Морковный сок</p>
-                        <p>300 мл</p>
+                        <img class="images_food" src="images/carrotjuice.jpg" alt="carrotjuice">
+                        <p class="price">110&#8381</p>
+                        <p class="name_element">Морковный сок</p>
+                        <p class="ves">300 мл</p>
                         <button class="btn">Добавить</button>
                     </div>
                 </div>

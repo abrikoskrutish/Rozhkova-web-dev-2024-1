@@ -1,7 +1,19 @@
+#active-button {
+    color: plum;
+}
+
 body {
     margin: 0;
-    font-family: "Playwrite CU", cursive;
-    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 15px;
+    font-style: normal;
+}
+
+.flex-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 /* для блоков */
@@ -12,15 +24,31 @@ body {
 
 * {
     box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 15px;
+    font-size: 20px;
+    font-style: normal;
 }
 
 /* для текста */
 p {
-    font-family: "Playwrite CU", cursive;
-    font-size: 15px;
-    font-weight: normal;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 15px;
+    font-size: 20px;
+    font-style: normal;
+    margin: 0;
 }
 
+h1 {
+    margin: 10px 0px;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 25px;
+}
 
 /* для изображений */
 img {
@@ -33,7 +61,7 @@ table {
     border: 1px solid grey;
     border-collapse: collapse;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 th, td {
@@ -45,26 +73,33 @@ th, td {
 .bt {
     margin-right: 10px;
     text-decoration: none;
-    font-family: "Playwrite CU", cursive;
-    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 15px;
+    font-style: normal;
     color: black;
+    cursor: pointer;
 }
 
 .two {
     text-decoration: none;
-    font-family: "Playwrite CU", cursive;
-    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 15px;
+    font-style: normal;
     color: white;
 }
 
-.btn:hover , .two:hover {
+.bt:hover , .two:hover {
     color: plum;
     border-color: plum;
 }
 
 
 /* для футера */
+
 footer {
+    margin-top: auto;
     padding: 5px;
     background-color: black;
     color: white;
@@ -72,6 +107,7 @@ footer {
 
 footer p {
     margin-left: 30px;
+    padding: 20px;
 }
 
 
