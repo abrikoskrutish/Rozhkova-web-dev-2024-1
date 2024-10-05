@@ -63,3 +63,57 @@ body {
 .drink {
     margin-bottom: 20px;
 }
+
+/* адаптивность */
+@media only screen and (max-width:1000px) {
+    /* 1. количество колонок - 2 */
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    /* 2. выравнение элементов меню по ос оси по центру */
+    .flex-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    /* 1. для главного заголовка */
+    nav h1 {
+        text-align: center;
+    }
+
+    /* 2.  h2 выравнивание по центру для заголовков раздела*/
+    section h2 {
+        text-align: center;
+    }
+
+    /* 3. выравнивание, ссылки больше */
+    .flex-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a{
+        font-size: 24px;
+    }
+    /* 4. кол-во колонок - 1 */
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center;
+        row-gap: 10px;
+    }
+
+
+}
