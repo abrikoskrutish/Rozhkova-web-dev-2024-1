@@ -22,10 +22,9 @@ html, body {
     gap: 15px;
 }
 
-/* для блоков */
+
 .contener {
-    max-width: 75% ;
-    margin: 0 auto;
+    margin: 0px 50px;
 }
 
 * {
@@ -57,7 +56,7 @@ h2 {
 }
 
 /* для изображений */
-img {
+.company img {
     width: auto;
     height: 350px;
 }
