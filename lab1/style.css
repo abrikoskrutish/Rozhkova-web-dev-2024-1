@@ -6,7 +6,7 @@ body {
 
 /* для блоков */
 div {
-    max-width: 75% ;
+    max-width: 80% ;
     margin: 0 auto;
 }
 
@@ -26,6 +26,7 @@ p {
 
 /* для изображений */
 img {
+    margin-top: 10px;
     width: auto;
     height: 350px;
 }
