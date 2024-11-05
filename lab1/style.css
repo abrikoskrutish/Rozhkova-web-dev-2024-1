@@ -62,17 +62,15 @@ th, td {
 
 .btn:hover , .two:hover {
     color: plum;
-    border-color: plum;
 }
-
 
 /* для футера */
 footer {
     padding: 5px;
+    padding-left: 40px;
     background-color: black;
     color: white;
 }
-
 
 .call {
     color: aliceblue;
