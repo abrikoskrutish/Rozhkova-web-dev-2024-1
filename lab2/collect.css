@@ -1,29 +1,27 @@
-body {
-    display: flex;
-    flex-direction: column;
+html, body {
+    height: 100%;
+    width: 100%;
 }
 
 .menu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-row: 1fr;
     justify-items: center;
-    column-gap: 10px;
-}
-
-html, body {
-    display: flex;
-    height: 100%;
+    gap: 10px;
 }
 
 .menu-element {
+    padding: 30px 40px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 25px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    flex-flow: column;
+    border: 2px solid transparent;
     border-radius: 35px;
-    
+    align-content: center;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
+    cursor: pointer;
 }
 
 .menu-element:hover {
@@ -32,30 +30,29 @@ html, body {
 
 
 .images_food {
-    display: flex;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
     border-radius: 35px;
-    
 }
 
 .price {
-    font-size: 23px;
+    font-size: 30px;
 }
 
 .name_element {
-    font-size: 22px;
-    flex: 1;
+    flex-grow: 1;
     max-width: 250px;
-    font-size: 100%;
 } 
 
 .ves {
     color: rgb(191, 191, 191);
 }
 
-.btn {
+.btnadd {
     background-color: #f1eee9;
-    margin-top: 10px;
-    padding: 10px 30px;
+    margin: 15px 0 0 0;
+    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
     border: none;
@@ -70,7 +67,7 @@ html, body {
 }
 
 /* адаптивность */
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:1000px) {
     /* 1. количество колонок - 2 */
     .menu {
         display: grid;
@@ -89,7 +86,7 @@ html, body {
     }
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:700px) {
     /* 1. для главного заголовка */
     nav h1 {
         text-align: center;
@@ -109,7 +106,7 @@ html, body {
     }
 
     nav a{
-        font-size: 24px;
+        font-size: 30px;
     }
     /* 4. кол-во колонок - 1 */
     .menu {

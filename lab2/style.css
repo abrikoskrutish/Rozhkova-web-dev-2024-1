@@ -5,8 +5,6 @@
 body {
     margin: 0;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 15px;
     font-style: normal;
 }
 
@@ -18,21 +16,19 @@ html, body {
 
 .flex-nav {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-/* для блоков */
+
 .contener {
-    max-width: 75% ;
-    margin: 0 auto;
+    margin: 0px 50px;
 }
 
 * {
     box-sizing: border-box;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 15px;
     font-size: 20px;
     font-style: normal;
 }
@@ -40,8 +36,7 @@ html, body {
 /* для текста */
 p {
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 15px;
+    font-weight: normal;
     font-size: 20px;
     font-style: normal;
     margin: 0;
@@ -57,7 +52,7 @@ h2 {
 }
 
 /* для изображений */
-img {
+.company img {
     width: auto;
     height: 350px;
 }
@@ -76,12 +71,10 @@ th, td {
 }
 
 /* для ссылок */
-.bt {
+.btnnav {
     margin-right: 10px;
     text-decoration: none;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 15px;
     font-style: normal;
     color: black;
     cursor: pointer;
@@ -90,13 +83,11 @@ th, td {
 .two {
     text-decoration: none;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 15px;
     font-style: normal;
     color: white;
 }
 
-.bt:hover , .two:hover {
+.btnnav:hover , .two:hover {
     color: plum;
     border-color: plum;
 }
@@ -159,14 +150,11 @@ footer p {
     }
     /* текст таблицы уменьшить на 2 px */
     th, td {
-        font-size: 1px;
+        font-size: 18px;
     }
-}
 
-@media only screen and (max-width:600px) {
-    /* текст таблицы уменьшить на 2 px */
-    th, td {
-        font-size: 1px;
+    nav a{
+        font-size: 30px;
     }
 }
 
@@ -174,5 +162,9 @@ footer p {
     /* текст таблицы уменьшить еще на 2 px */
     th, td {
         font-size: 16px;
+    }
+
+    nav a{
+        font-size: 30px;
     }
 }
