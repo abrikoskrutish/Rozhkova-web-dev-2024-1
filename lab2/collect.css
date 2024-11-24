@@ -7,7 +7,7 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row: 1fr;
-    justify-items: center;
+    justify-self: center;
     gap: 10px;
 }
 
