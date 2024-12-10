@@ -149,6 +149,18 @@ main {
     height: 110px;
 }
 
+.dish-img img {
+    margin-top: 20px;
+    border-radius: 35px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.menu-element.selected {
+    border: 2px solid plum;
+    background-color: #ffeefc;
+}
 
 /* адаптивность */
 @media only screen and (max-width:1000px) {
