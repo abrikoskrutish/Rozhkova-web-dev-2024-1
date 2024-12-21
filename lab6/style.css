@@ -1,0 +1,167 @@
+#active-button {
+    color: plum;
+}
+
+body {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.flex-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+.contener {
+    margin: 0px 50px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+}
+
+/* для текста */
+p {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    margin: 0;
+}
+
+h1 {
+    margin: 10px 0px;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+/* для изображений */
+.company img {
+    width: auto;
+    height: 350px;
+}
+
+/* для таблиц */
+table {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+/* для ссылок */
+.bt {
+    margin-right: 10px;
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+    color: black;
+    cursor: pointer;
+}
+
+.two {
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+    color: white;
+}
+
+.bt:hover , .two:hover {
+    color: plum;
+    border-color: plum;
+}
+
+
+/* для футера */
+
+footer {
+    margin-top: auto;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    margin-top: auto;
+}
+
+footer p {
+    margin-left: 30px;
+    padding: 20px;
+}
+
+
+.call {
+    color: aliceblue;
+}
+
+/* адаптивность */
+
+@media only screen and (max-width:1000px) {
+    /* изображение ширина 500 */
+    .company img {
+        width: 500px;
+    }
+    /*  */
+    .flex-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    nav h1 {
+        text-align: center;
+    }
+
+    .flex-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a{
+        font-size: 24px;
+    }
+
+    /* изображение ширина 100 процентов */
+    .company img {
+        width: 100%;
+    }
+    /* текст таблицы уменьшить на 2 px */
+    th, td {
+        font-size: 1px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    /* текст таблицы уменьшить на 2 px */
+    th, td {
+        font-size: 1px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    /* текст таблицы уменьшить еще на 2 px */
+    th, td {
+        font-size: 16px;
+    }
+}
