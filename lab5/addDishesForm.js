@@ -72,11 +72,12 @@ function clickButtons() {
 }
 
 
-function initializeFilterButtons() {
+function filterButtons() {
     const kindButtons = document.querySelectorAll('.kind-buttons button');
 
     kindButtons.forEach(button => {
         button.addEventListener('click', () => {
+
             const category = button.closest('.kind-buttons').parentNode.id;
             const kind = button.dataset.kind;
             const menuContainer = document.querySelector(`#${category} .menu`);
@@ -95,7 +96,6 @@ function initializeFilterButtons() {
                 buttonsInCategory.forEach(btn => btn.classList.remove('active'));
 
                 button.classList.add('active');
-
                 allCards.forEach(card => {
                     if (card.dataset.kind === kind) {
                         card.style.display = '';

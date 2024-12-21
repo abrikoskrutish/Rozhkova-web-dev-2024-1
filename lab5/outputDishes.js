@@ -7,15 +7,8 @@ function printDishes() {
         desserts: []
     };
 
-    const kinds = {
-        soup: ['meat', 'fish', 'veg'],
-        "main_food": ['meat', 'fish', 'veg'],
-        "salads_starters": ['meat', 'fish', 'veg'],
-        drink: ['hot', 'cold'],
-        desserts: ['small', 'medium', 'large']
-    };
-
-    const kindTranslations = {
+    
+    const Russiankind = {
         "veg": "вегетарианский",
         "meat": "мясной",
         "fish": "рыбный",
@@ -24,6 +17,14 @@ function printDishes() {
         "small": "маленькая порция",
         "medium": "средняя порция",
         "large": "большая порция"
+    };
+    
+    const kinds = {
+        soup: ['meat', 'fish', 'veg'],
+        "main_food": ['meat', 'fish', 'veg'],
+        "salads_starters": ['meat', 'fish', 'veg'],
+        drink: ['hot', 'cold'],
+        desserts: ['small', 'medium', 'large']
     };
 
     dishes.forEach(dish => {
@@ -37,22 +38,27 @@ function printDishes() {
     }
 
     Object.keys(dishesByCategory).forEach((category) => {
-        const dishesCurrentCategory = dishesByCategory[category];
+
         const kindButtons = document.createElement('div');
         kindButtons.className = 'kind-buttons';
+        
+        
         kinds[category].forEach(kind => {
             let button = document.createElement('button');
             button.dataset.kind = kind;
-            button.textContent = kindTranslations[kind];
+            button.textContent = Russiankind[kind];
             kindButtons.appendChild(button);
         });
-
+        
         const sect = document.getElementById(category);
         const heading = sect.querySelector('h2');
         heading.insertAdjacentElement('afterend', kindButtons);
-
+        
         const menuContainer = sect.querySelector('.menu');
+        const dishesCurrentCategory = dishesByCategory[category];
+
         if (menuContainer) {
+
             dishesCurrentCategory.forEach(dish => {
                 const card = document.createElement("div");
                 card.className = "menu-element";
@@ -71,13 +77,11 @@ function printDishes() {
 
                 menuContainer.appendChild(card);
             });
-        } else {
-            console.error(`Menu container not found in section: ${category}`);
-        }
+        };
     });
 
     clickButtons();
-    initializeFilterButtons();
+    filterButtons();
 }
 
 printDishes();
