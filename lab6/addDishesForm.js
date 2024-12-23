@@ -107,3 +107,86 @@ function filterButtons() {
         });
     });
 }
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Останавливаем отправку формы для проверки
+
+    const requiredCategories = ["soup", "main_food", "salads_starters", "drink"]; // Основные категории для комбо
+    const selectedCategories = new Set(); // Хранение выбранных категорий
+
+    // Проверяем, выбрано ли хотя бы одно блюдо в каждой категории
+    document.querySelectorAll(".kind-buttons button").forEach(item => {
+        const dishCategory = item.closest('.kind-buttons').parentNode.id;
+        console.log(dishCategory)
+        selectedCategories.add(dishCategory);
+    });
+
+    const missingCategories = requiredCategories.filter(category => !selectedCategories.has(category));
+
+    // Определяем, какое сообщение нужно показать
+    let notificationText = "";
+
+    if (selectedCategories.size === 0) {
+        notificationText = "Ничего не выбрано. Выберите блюда для заказа.";
+    } else if (missingCategories.includes("drink") && missingCategories.length === 1) {
+        notificationText = "Выберите напиток.";
+    } else if (
+        (missingCategories.includes("main_food") || missingCategories.includes("salads_starters")) &&
+        !missingCategories.includes("soup")
+    ) {
+        notificationText = "Выберите главное блюдо/салат/стартер.";
+    } else if (
+        (missingCategories.includes("soup") || missingCategories.includes("main_food")) &&
+        !missingCategories.includes("salads_starters")
+    ) {
+        notificationText = "Выберите суп или главное блюдо.";
+    } else if (missingCategories.includes("main_food") && missingCategories.length === 1) {
+        notificationText = "Выберите главное блюдо.";
+    }
+
+    if (notificationText) {
+        showNotification(notificationText);
+    } else {
+        // Если все категории выбраны, отправляем форму
+        this.submit();
+    }
+});
+
+// Функция создания уведомления
+function showNotification(message) {
+    // Убираем старые уведомления
+    const existingNotification = document.querySelector(".notification");
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    // Создаем уведомление
+    const notification = document.createElement("div");
+    notification.className = "notification";
+    notification.innerHTML = `
+        <p>${message}</p>
+        <button class="close-notification">Окей 👌</button>
+    `;
+
+    // Стили для уведомления
+    Object.assign(notification.style, {
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        zIndex: "1000",
+        backgroundColor: "#fff",
+        padding: "20px",
+        borderRadius: "10px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+        textAlign: "center",
+        fontFamily: "'Oswald', sans-serif"
+    });
+
+    // Закрытие уведомления
+    notification.querySelector(".close-notification").addEventListener("click", () => {
+        notification.remove();
+    });
+
+    document.body.appendChild(notification);
+}
