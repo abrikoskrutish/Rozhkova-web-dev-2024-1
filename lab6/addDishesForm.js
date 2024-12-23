@@ -108,50 +108,6 @@ function filterButtons() {
     });
 }
 
-document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Останавливаем отправку формы для проверки
-
-    const requiredCategories = ["soup", "main_food", "salads_starters", "drink"]; // Основные категории для комбо
-    const selectedCategories = new Set(); // Хранение выбранных категорий
-
-    // Проверяем, выбрано ли хотя бы одно блюдо в каждой категории
-    document.querySelectorAll(".kind-buttons button").forEach(item => {
-        const dishCategory = item.closest('.kind-buttons').parentNode.id;
-        console.log(dishCategory)
-        selectedCategories.add(dishCategory);
-    });
-
-    const missingCategories = requiredCategories.filter(category => !selectedCategories.has(category));
-
-    // Определяем, какое сообщение нужно показать
-    let notificationText = "";
-
-    if (selectedCategories.size === 0) {
-        notificationText = "Ничего не выбрано. Выберите блюда для заказа.";
-    } else if (missingCategories.includes("drink") && missingCategories.length === 1) {
-        notificationText = "Выберите напиток.";
-    } else if (
-        (missingCategories.includes("main_food") || missingCategories.includes("salads_starters")) &&
-        !missingCategories.includes("soup")
-    ) {
-        notificationText = "Выберите главное блюдо/салат/стартер.";
-    } else if (
-        (missingCategories.includes("soup") || missingCategories.includes("main_food")) &&
-        !missingCategories.includes("salads_starters")
-    ) {
-        notificationText = "Выберите суп или главное блюдо.";
-    } else if (missingCategories.includes("main_food") && missingCategories.length === 1) {
-        notificationText = "Выберите главное блюдо.";
-    }
-
-    if (notificationText) {
-        showNotification(notificationText);
-    } else {
-        // Если все категории выбраны, отправляем форму
-        this.submit();
-    }
-});
-
 // Функция создания уведомления
 function showNotification(message) {
     // Убираем старые уведомления
@@ -190,3 +146,50 @@ function showNotification(message) {
 
     document.body.appendChild(notification);
 }
+
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Останавливаем отправку формы для проверки
+
+    const requiredCategories = ["soup", "main_food", "salads_starters", "drink"]; // Основные категории для комбо
+    const selectedCategories = new Set(); // Хранение выбранных категорий
+
+    // Проверяем, выбрано ли хотя бы одно блюдо в каждой категории
+    document.querySelectorAll(".menu-element.selected").forEach(item => {
+        const dishCategory = item.parentNode.parentNode.id;
+        console.log(dishCategory)
+        selectedCategories.add(dishCategory); 
+    });
+
+    const missingCategories = requiredCategories.filter(category => !selectedCategories.has(category));
+
+    // Определяем, какое сообщение нужно показать
+    let notificationText = "";
+    // 1. форма отправляется если выбран только десерт - только десерт (только напиток) = выберите главное блюдо
+
+    if (selectedCategories.size === 0) {
+        notificationText = "Ничего не выбрано. Выберите блюда для заказа.";
+    } else if (missingCategories.includes("drink") && missingCategories.length === 1) {
+        notificationText = "Выберите напиток.";
+    } else if (
+        (missingCategories.includes("main_food") || missingCategories.includes("salads_starters")) &&
+        !missingCategories.includes("soup")
+    ) {
+        notificationText = "Выберите главное блюдо/салат/стартер.";
+    } else if (
+        (missingCategories.includes("soup") || missingCategories.includes("main_food")) &&
+        !missingCategories.includes("salads_starters")
+    ) {
+        notificationText = "Выберите суп или главное блюдо.";
+    } else if (missingCategories.includes("main_food") && missingCategories.length === 1) {
+        notificationText = "Выберите главное блюдо.";
+    }
+
+    if (notificationText) {
+        showNotification(notificationText);
+    } else {
+        // Если все категории выбраны, отправляем форму
+        this.submit();
+    }
+});
+
