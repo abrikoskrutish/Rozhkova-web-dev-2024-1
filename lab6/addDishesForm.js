@@ -137,7 +137,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const categories = ["soup", "main_food", "salads_starters", "drink", "desserts"];
-    const selectedCategories = new Set(); // set коллекция уникальных значений
+    const selectedCategories = new Set();
 
 
     document.querySelectorAll(".menu-element.selected").forEach(item => {
@@ -145,8 +145,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
         selectedCategories.add(dishCategory); 
     });
 
-    // невыбранные категории
-    // если true - категории добавляется
+
     const missingCategories = categories.filter(category => !selectedCategories.has(category));
 
     let notificationText = "";
