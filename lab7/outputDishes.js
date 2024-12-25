@@ -1,10 +1,10 @@
 function printDishes() {
     const dishesByCategory = {
         soup: [],
-        main_food: [],
-        salads_starters: [],
+        "main-course": [],
+        salad: [],
         drink: [],
-        desserts: []
+        dessert: []
     };
 
     
@@ -21,10 +21,10 @@ function printDishes() {
     
     const kinds = {
         soup: ['meat', 'fish', 'veg'],
-        "main_food": ['meat', 'fish', 'veg'],
-        "salads_starters": ['meat', 'fish', 'veg'],
+        "main-course": ['meat', 'fish', 'veg'],
+        salad: ['meat', 'fish', 'veg'],
         drink: ['hot', 'cold'],
-        desserts: ['small', 'medium', 'large']
+        dessert: ['small', 'medium', 'large']
     };
 
     dishes.forEach(dish => {
@@ -83,5 +83,3 @@ function printDishes() {
     clickButtons();
     filterButtons();
 }
-
-printDishes();

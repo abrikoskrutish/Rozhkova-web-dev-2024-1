@@ -24,10 +24,10 @@ function infoAfterAddDishes(dish) {
 
     const categoryMap= {
         soup: { selector: ".order-item-soup", label: "Суп", inputId: "input-soup" },
-        main_food: { selector: ".order-item-main-food", label: "Главное блюдо", inputId: "input-main-food" },
-        salads_starters: { selector: ".order-item-salads-starters", label: "Салат или стартер", inputId: "input-salads-starters"},
+        "main-course": { selector: ".order-item-main-course", label: "Главное блюдо", inputId: "input-main-course" },
+        salad: { selector: ".order-item-salad", label: "Салат или стартер", inputId: "input-salad"},
         drink: { selector: ".order-item-drink", label: "Напиток", inputId: "input-drink" },
-        desserts: { selector: ".order-item-desserts", label: "Десерт", inputId: "input-desserts" }
+        dessert: { selector: ".order-item-dessert", label: "Десерт", inputId: "input-dessert" }
     };
 
     const categoryInfo = categoryMap[dish.category];
@@ -136,7 +136,7 @@ function showNotification(message) {
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const categories = ["soup", "main_food", "salads_starters", "drink", "desserts"];
+    const categories = ["soup", "main-course", "salad", "drink", "dessert"];
     const selectedCategories = new Set();
 
 
@@ -155,16 +155,16 @@ document.querySelector("form").addEventListener("submit", function (event) {
     } else if (missingCategories.includes("drink") && missingCategories.length <= 3) {
         notificationText = "Выберите напиток.";
     } else if (
-        ((missingCategories.includes("main_food") || missingCategories.includes("salads_starters")) &&
+        ((missingCategories.includes("main-course") || missingCategories.includes("salad")) &&
         !missingCategories.includes("soup")) && (missingCategories.length >=3)
     ) {
         notificationText = "Выберите главное блюдо/салат/стартер.";
     } else if (
-        (missingCategories.includes("soup") || missingCategories.includes("main_food")) &&
-        !missingCategories.includes("salads_starters") && (missingCategories.length >=3)
+        (missingCategories.includes("soup") || missingCategories.includes("main-course")) &&
+        !missingCategories.includes("salad") && (missingCategories.length >=3)
     ) {
         notificationText = "Выберите суп или главное блюдо.";
-    } else if (missingCategories.includes("main_food") && (!missingCategories.includes("drink") || !missingCategories.includes("desserts")) && (missingCategories.length >=3)) {
+    } else if (missingCategories.includes("main-course") && (!missingCategories.includes("drink") || !missingCategories.includes("dessert")) && (missingCategories.length >=3)) {
         notificationText = "Выберите главное блюдо.";
     }
 

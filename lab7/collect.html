@@ -148,52 +148,52 @@
                 </div>
             </section>
 
-            <section class="main-food" id="main_food">
+            <section class="main-course" id="main-course">
                 <h2>Выберите главное блюдо</h2>
                 <div class="menu">
                     
                 </div>
             </section>
 
-            <section class="salads-starters" id="salads_starters">
+            <section class="salad" id="salad">
                 <h2>Выберите салат или стартер</h2>
                 <div class="menu">
                     
                 </div>
             </section>
-
+            
             <section class="drink" id="drink">
                 <h2>Выберите напиток</h2>
                 <div class="menu">
                     
                 </div>
             </section>
-
-            <section class="desserts" id="desserts">
+            
+            <section class="dessert" id="dessert">
                 <h2>Выберите десерт</h2>
                 <div class="menu">
                     
                 </div>
             </section>
-
-
-
+            
+            
+            
             <!-- форма заказа -->
             <section class="buy-form">
                 <h1 class="form-header">Сделать заказ</h1>
                 <form method="POST" action="https://httpbin.org/post">
                     <section class="food">
                         <h2>Ваш заказ</h2>
-                            <div class="order-items">
-                                <div class="order-item-soup">
-                                    <p><b>Суп</b></p>
-                                    <p>Блюдо не выбрано</p>
-                                </div>
-                                <div class="order-item-main-food">
+                        <div class="order-items">
+                            <div class="order-item-soup">
+                                <p><b>Суп</b></p>
+                                <p>Блюдо не выбрано</p>
+                            </div>
+                            <div class="order-item-main-course">
                                     <p><b>Главное блюдо</b></p>
                                     <p>Блюдо не выбрано</p>
                                 </div>
-                                <div class="order-item-salads-starters">
+                                <div class="order-item-salad">
                                     <p><b>Салат или стартер</b></p>
                                     <p>Блюдо не выбрано</p>
                                 </div>
@@ -201,7 +201,7 @@
                                     <p><b>Напиток</b></p>
                                     <p>Напиток не выбран</p>
                                 </div>
-                                <div class="order-item-desserts">
+                                <div class="order-item-dessert">
                                     <p><b>Десерт</b></p>
                                     <p>Напиток не выбран</p>
                                 </div>
@@ -210,35 +210,35 @@
                                     <p class="coast">0&#x20bd;</p>
                                 </div>
                             </div>
-        
+                            
                             <div class="order-items-not">
                                 <p>Ничего не выбрано</p>
                             </div>
-        
+                            
                             <label for="input-soup"></label>
                             <input type="text" id="input-soup" name="soup" value="" hidden>
-        
-                            <label for="input-main-food"></label>
-                            <input type="text" id="input-main-food" name="main-food" value="" hidden>
                             
-                            <label for="input-salads-starters"></label>
-                            <input type="text" id="input-salads-starters" name="salads-starters" value="" hidden>
-        
+                            <label for="input-main-course"></label>
+                            <input type="text" id="input-main-course" name="main-course" value="" hidden>
+                            
+                            <label for="input-salad"></label>
+                            <input type="text" id="input-salad" name="salad" value="" hidden>
+                            
                             <label for="input-drink"></label>
                             <input type="text" id="input-drink" name="drink" value="" hidden>
                             
-                            <label for="input-desserts"></label>
-                            <input type="text" id="input-desserts" name="desserts" value="" hidden>
-
-
-        
-                        <div class="choose">
-                            <label for="comment">Комментарии к заказу</label>
+                            <label for="input-dessert"></label>
+                            <input type="text" id="input-dessert" name="dessert" value="" hidden>
+                            
+                            
+                            
+                            <div class="choose">
+                                <label for="comment">Комментарии к заказу</label>
                             <textarea name="comment" id="comment"></textarea>
                         </div>
-                            
+                        
                     </section>   
-    
+                    
                     <section class="about-user">
                         <h2>Ваши данные</h2>
                         
@@ -246,28 +246,28 @@
                             <label for="name">Имя</label>
                             <input type="text" name="name" id="name" required>
                         </div>
-         
+                        
                         <div class="form-el block input-text">
                             <label for="email">Email</label>
                             <!-- readolny!!!!!!!!!!!!!!!!!! -->
                             <input type="email" name="email" id="email" readonly>
                         </div>
-        
+                        
                         <div class="form-el">
                             <input type="checkbox" name="agree" id="agree" checked>
                             <label for="agree">Получать информацию <br> о скидках и акциях</label>
                         </div>
-        
+                        
                         <div class="form-el block input-text">
                             <label for="tel">Номер телефона</label>
                             <input type="tel" name="tel" id="tel" required>
                         </div>
-        
+                        
                         <div class="form-el block input-text">
                             <label for="address">Адрес доставки</label>
                             <input type="text" name="address" id="address" required>
                         </div>
-        
+                        
                         <div class="form-fieldset">
                             <fieldset>
                                 <legend>Время доставки:</legend>
@@ -290,8 +290,8 @@
         
                         <button type="reset">Сбросить</button>
                         <button type="submit">Отправить</button>
-        
-                     </section>
+                        
+                    </section>
                 </form>
             </section>
         </div>
@@ -302,11 +302,11 @@
             <p>Позвонить нам +7-000-000-00-00</p>
         </div>
     </footer>
-
-    <script src="loadDishes.js"></script>
+    
     <script src="dishes.js"></script>
+    <script src="loadDishes.js"></script>
     <script src="addDishesForm.js"></script>
     <script src="outputDishes.js"></script>
-
+    
 </body>
 </html>
