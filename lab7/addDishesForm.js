@@ -108,13 +108,15 @@ function filterButtons() {
     });
 }
 
-
+// создания уведомления
 function showNotification(message) {
+    // убираем старые уведомления
     const existingNotification = document.querySelector(".notification");
     if (existingNotification) {
         existingNotification.remove();
     }
 
+    // создаем уведомление
     const notification = document.createElement("div");
     notification.className = "notification";
     notification.innerHTML = `
@@ -122,6 +124,7 @@ function showNotification(message) {
         <button class="close-notification">Окей 👌</button>
     `;
 
+    // закрытие уведомления
     notification.querySelector(".close-notification").addEventListener("click", () => {
         notification.remove();
     });
