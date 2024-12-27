@@ -1,0 +1,350 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+    gap: 10px;
+}
+
+.menu-element {
+    display: flex;
+    flex-flow: column wrap;
+    width: 300px;
+    max-height: 550px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    align-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-element:hover {
+    border: 2px solid plum;
+}
+
+
+.images_food {
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.price {
+    font-size: 23px;
+}
+
+.name_element {
+    font-size: 22px;
+    flex: 1;
+    max-width: 250px;
+    font-size: 100%;
+} 
+
+.ves {
+    color: rgb(191, 191, 191);
+}
+
+.btn {
+    background-color: #f1eee9;
+    margin: 15px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.menu-element:hover button {
+    background-color: rgb(201, 201, 201);
+}
+
+.drink {
+    margin-bottom: 20px;
+}
+
+/* форма */
+.form-h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.buy-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.buy-form h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.form-el {
+    padding: 10px 0px;
+}
+
+.time-choose label {
+    display: block;
+}
+
+
+.form-fieldset fieldset {
+    border-style: none;
+}
+
+.block label {
+    display: block;
+}
+
+.choose {
+    padding-left: 50px;
+}
+
+.choose label {
+    display: block;
+}
+
+.about-user button {
+    display: inline-block;
+    background-color: white;
+    padding: 30px 15px;
+}
+
+form label, form legend, form button, textarea {
+    font-size: large;
+}
+
+.input-text input {
+    min-height: 50px;
+    width: 20rem;
+    font-size: large;
+}
+
+
+.choose {
+    padding: 10px 0px;
+}
+
+.choose select {
+    min-height: 50px;
+    width: 20rem;
+    font-size: large;
+}
+
+.notation {
+    font-style: italic;
+    font-size: 80%;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+main {
+    padding-bottom: 50px;
+}
+
+.choose textarea {
+    width: 100%;
+    height: 110px;
+}
+
+.dish-img img {
+    margin-top: 20px;
+    border-radius: 35px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.menu-element.selected {
+    border: 2px solid plum;
+    background-color: #ffeefc;
+}
+
+/*  */
+.kind-buttons {
+    display: flex;
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+.kind-buttons button {
+    background-color: none;
+    color: rebeccapurple;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.kind-buttons button:hover {
+    background-color: rgb(255, 185, 252);
+}
+
+.kind-buttons button.active {
+    background-color: rgb(255, 185, 252);
+}
+
+/* комбо */
+.combo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.combo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    justify-items: center;
+}
+
+.some-combo-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.iсon-and-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+
+.iсon-and-text img {
+    width: 40px;
+    height: auto;
+    transform: translateY(0);
+}
+
+.img-combo:hover {
+    transform: scale(1.3);
+    transform: translateY(-10px);
+}
+
+.iсon-and-text #description-desert {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.iсon-and-text p {
+    text-align: center
+}
+
+/*  */
+
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.notification p {
+    margin: 0 0 10px 0;
+}
+
+.notification .close-notification {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.notification .close-notification:hover {
+    background-color: plum;
+}
+
+/* lab 8*/
+.sum {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(242, 190, 232, 0.5);
+    border-top: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+}
+
+/* адаптивность */
+@media only screen and (max-width:1000px) {
+    /* 1. количество колонок - 2 */
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    /* 2. выравнение элементов меню по ос оси по центру */
+    .flex-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    /* 1. для главного заголовка */
+    nav h1 {
+        text-align: center;
+    }
+
+    /* 2.  h2 выравнивание по центру для заголовков раздела*/
+    section h2 {
+        text-align: center;
+    }
+
+    /* 3. выравнивание, ссылки больше */
+    .flex-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a{
+        font-size: 24px;
+    }
+    /* 4. кол-во колонок - 1 */
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center;
+        row-gap: 10px;
+    }
+
+
+}
+
+/* для формы */
+
+@media only screen and (max-width: 1000px) {
+    .buy-form form {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
