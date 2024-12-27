@@ -275,15 +275,36 @@ main {
 
 /* lab 8*/
 .sum {
-    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: rgba(242, 190, 232, 0.5);
     border-top: 1px solid black;
-    padding: 10px;
-    text-align: center;
+    padding: 20px 50px;
     z-index: 10;
+}
+
+.place-order-button {
+    padding: 5px 10px;
+    border: 1.5px solid rebeccapurple;
+    background-color: #e2e0dd;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    padding-bottom: 60px;
+}
+
+.disabled {
+    background-color: #bcb4bb;
+    color: rgb(163, 163, 163);
+    pointer-events: none;
 }
 
 /* адаптивность */
