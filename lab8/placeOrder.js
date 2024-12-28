@@ -12,15 +12,15 @@ function clickAddButton() {
 
             if (button.parentNode.classList.contains("selected")) {
                 button.parentNode.classList.remove("selected");
+                window.localStorage.removeItem(dish.category);
             } else {
                 button.parentNode.classList.add("selected");
                 window.localStorage.setItem(dish.category, dish.id);
-            };
+            }
 
-            totalCostCombo()
+            totalCostCombo();
         });
     });
-
 }
 
 
@@ -43,9 +43,8 @@ function totalCostCombo() {
         <p>Итого: ${total}&#x20bd;</p>
         <a href="placeOrder.html" class="place-order-button">Перейти к оформлению</a>
     `;
+}
 
-
-};
 
 let link = 'https://edu.std-900.ist.mospolytech.ru';
 let api_key = '12fe1881-5f53-4b3b-83a6-1fd9222bdb19';
@@ -54,7 +53,7 @@ let api_key = '12fe1881-5f53-4b3b-83a6-1fd9222bdb19';
 async function loadDishData(dishId) {
     console.log(`Loading data for dish ID: ${dishId}`);
     try {
-        const response = await fetch(`${link}/api/dishes/${dishId}?api_key=${api_key}`);
+        const response = await fetch(`${link}/labs/api/dishes/${dishId}?api_key=${api_key}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -78,9 +77,9 @@ async function loadSelectedDishes() {
 
     console.log('Selected IDs:', selectedIds);
 
-    const orderItemsContainer = document.querySelector('.order-items');
+    const orderItemsContainer = document.querySelector('.order-selected-dishes');
     if (!orderItemsContainer) {
-        console.error('order-items container not found');
+        console.error('order-selected-dishes container not found');
         return;
     }
     orderItemsContainer.innerHTML = ''; 
@@ -99,12 +98,35 @@ async function loadSelectedDishes() {
                 <p class="price">${dish.price}&#x20bd;</p>
                 <p class="name_element">${dish.name}</p>
                 <p class="ves">${dish.count}</p>
+                <button class="btn btn-delete">Удалить</button>
             `;
 
             console.log('Appending card:', card);
             orderItemsContainer.appendChild(card);
         }
     }
+
+    document.querySelectorAll(".btn-delete").forEach(button => {
+        button.addEventListener("click", (event) => {
+            const dishElement = event.target.closest('.menu-element');
+            const dishKeyword = dishElement.dataset.dish;
+            const dish = getDishFromKeyword(dishKeyword);
+
+            if (!dish) {
+                console.error(`Dish not found for keyword: ${dishKeyword}`);
+                return;
+            }
+
+            // Remove from localStorage
+            localStorage.removeItem(dish.category);
+
+            // Remove element from DOM
+            dishElement.remove();
+
+            // Update total cost
+            totalCostForm();
+        });
+    });
 
     totalCostForm();
 }
@@ -128,7 +150,40 @@ function totalCostForm() {
     `;
 }
 
+const categoryMap = {
+    soup: "Суп",
+    "main-course": "Главное блюдо",
+    salad: "Салат или стартер",
+    drink: "Напиток",
+    dessert: "Десерт"
+};
+
+async function addSelectedDishesInForm() {
+    const categories = ['soup', 'main-course', 'salad', 'drink', 'dessert'];
+    for (const category of categories) {
+        const dishId = localStorage.getItem(category);
+        if (dishId) {
+            const dish = await loadDishData(dishId);
+            if (dish) {
+                const categoryElement = document.querySelector(`.order-item-${category}`);
+                if (categoryElement) {
+                    categoryElement.innerHTML = `
+                        <p><b>${categoryMap[category]}</b></p>
+                        <p>${dish.name} ${dish.price}&#x20bd;</p>
+                    `;
+                    const inputElement = document.getElementById(`input-${category}`);
+                    if (inputElement) {
+                        inputElement.value = dish.name;
+                    }
+                }
+            }
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired');
+    addSelectedDishesInForm();
     loadSelectedDishes();
 });
+

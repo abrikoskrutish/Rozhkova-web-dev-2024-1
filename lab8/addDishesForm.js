@@ -17,19 +17,35 @@ function totalCostForm() {
 }
 
 function infoAfterAddDishes(dish) {
-    const categoryMap = {
+    const koctul = document.querySelector(".order-items-not");
+    const info =  document.querySelector(".order-items");
+    koctul.style.display = "none";
+
+    const categoryMap= {
         soup: { selector: ".order-item-soup", label: "Суп", inputId: "input-soup" },
-        "main-course": { selector: ".order-item-main-course", label: "Главное блюдо", inputId: "input-main-course" },
-        salad: { selector: ".order-item-salad", label: "Салат или стартер", inputId: "input-salad" },
+        main_food: { selector: ".order-item-main-", label: "Главное блюдо", inputId: "input-main-course" },
+        salads_starters: { selector: ".order-item-salad", label: "Салат или стартер", inputId: "input-salad"},
         drink: { selector: ".order-item-drink", label: "Напиток", inputId: "input-drink" },
-        dessert: { selector: ".order-item-dessert", label: "Десерт", inputId: "input-dessert" }
+        desserts: { selector: ".order-item-dessert", label: "Десерт", inputId: "input-dessert" }
     };
+
+    const categoryInfo = categoryMap[dish.category];
+    if (categoryInfo) {
+        const categoryElement = document.querySelector(categoryInfo.selector);
+        categoryElement.innerHTML = `
+            <p><b>${categoryInfo.label}</b></p>
+            <p>${dish.name} ${dish.price}₽</p>
+        `;
+        const inputElement = document.getElementById(categoryInfo.inputId);
+        inputElement.value = dish.keyword;
+    }
 
     document.querySelectorAll(".menu-element").forEach(item => {
         const currentDish = getDishFromKeyword(item.dataset.dish);
         if (currentDish && currentDish.category === dish.category) {
             item.classList.remove("selected");
         }
+
     });
 
     const selectedDish = document.querySelector(`[data-dish="${dish.keyword}"]`);
@@ -37,7 +53,8 @@ function infoAfterAddDishes(dish) {
         selectedDish.classList.add("selected");
     }
 
-    totalCostForm();
+    totalCost();
+
 }
 
 function clickButtons() {

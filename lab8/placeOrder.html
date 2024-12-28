@@ -6,11 +6,16 @@
     <title>Оформить заказ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="collect.css">
+    <link rel="stylesheet" href="placeOrder.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script src="loadDishes.js"></script>
+    <script src="dishes.js"></script>
+    <script src="addDishesForm.js"></script>
+    <script src="placeOrder.js"></script>
     <header>
         <div class="contener">
             <nav>
@@ -29,7 +34,7 @@
         <div class="contener">
             <section class="order-structure">
                 <h2>Состав заказа</h2>
-                <div class="order-items">
+                <div class="order-selected-dishes">
                     <p>Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу <a class="bt" href="collect.html">Собрать ланч</a></p>
                 </div>
             </section>
@@ -45,50 +50,48 @@
                                 <p>Блюдо не выбрано</p>
                             </div>
                             <div class="order-item-main-course">
-                                    <p><b>Главное блюдо</b></p>
-                                    <p>Блюдо не выбрано</p>
-                                </div>
-                                <div class="order-item-salad">
-                                    <p><b>Салат или стартер</b></p>
-                                    <p>Блюдо не выбрано</p>
-                                </div>
-                                <div class="order-item-drink">
-                                    <p><b>Напиток</b></p>
-                                    <p>Напиток не выбран</p>
-                                </div>
-                                <div class="order-item-dessert">
-                                    <p><b>Десерт</b></p>
-                                    <p>Напиток не выбран</p>
-                                </div>
-                                <div class="order-coast">
-                                    <p><b>Стоимость заказа</b></p>
-                                    <p class="coast">0&#x20bd;</p>
-                                </div>
+                                <p><b>Главное блюдо</b></p>
+                                <p>Блюдо не выбрано</p>
                             </div>
-                            
-                            <div class="order-items-not">
-                                <p>Ничего не выбрано</p>
+                            <div class="order-item-salad">
+                                <p><b>Салат или стартер</b></p>
+                                <p>Блюдо не выбрано</p>
                             </div>
-                            
-                            <label for="input-soup"></label>
-                            <input type="text" id="input-soup" name="soup" value="" hidden>
-                            
-                            <label for="input-main-course"></label>
-                            <input type="text" id="input-main-course" name="main-course" value="" hidden>
-                            
-                            <label for="input-salad"></label>
-                            <input type="text" id="input-salad" name="salad" value="" hidden>
-                            
-                            <label for="input-drink"></label>
-                            <input type="text" id="input-drink" name="drink" value="" hidden>
-                            
-                            <label for="input-dessert"></label>
-                            <input type="text" id="input-dessert" name="dessert" value="" hidden>
-                            
-                            
-                            
-                            <div class="choose">
-                                <label for="comment">Комментарии к заказу</label>
+                            <div class="order-item-drink">
+                                <p><b>Напиток</b></p>
+                                <p>Напиток не выбран</p>
+                            </div>
+                            <div class="order-item-dessert">
+                                <p><b>Десерт</b></p>
+                                <p>Десерт не выбран</p>
+                            </div>
+                            <div class="order-coast">
+                                <p><b>Стоимость заказа</b></p>
+                                <p class="coast">0&#x20bd;</p>
+                            </div>
+                        </div>
+                        
+                        <div class="order-items-not">
+                            <p>Ничего не выбрано</p>
+                        </div>
+                        
+                        <label for="input-soup"></label>
+                        <input type="text" id="input-soup" name="soup" value="" hidden>
+                        
+                        <label for="input-main-course"></label>
+                        <input type="text" id="input-main-course" name="main-course" value="" hidden>
+                        
+                        <label for="input-salad"></label>
+                        <input type="text" id="input-salad" name="salad" value="" hidden>
+                        
+                        <label for="input-drink"></label>
+                        <input type="text" id="input-drink" name="drink" value="" hidden>
+                        
+                        <label for="input-dessert"></label>
+                        <input type="text" id="input-dessert" name="dessert" value="" hidden>
+                        
+                        <div class="choose">
+                            <label for="comment">Комментарии к заказу</label>
                             <textarea name="comment" id="comment"></textarea>
                         </div>
                         
@@ -156,6 +159,5 @@
             <p>Позвонить нам +7-000-000-00-00</p>
         </div>
     </footer>
-    <script src="placeOrder.js"></script>
 </body>
 </html>
